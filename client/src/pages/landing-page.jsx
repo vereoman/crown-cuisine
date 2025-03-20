@@ -13,7 +13,7 @@ import {
     CreditCard,
     MenuSquare,
     Warehouse,
-    UserCheck
+    UserCheck,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -63,7 +63,9 @@ const LandingPage = () => {
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />
-                            <CardTitle className="text-foreground">Easy Table Booking</CardTitle>
+                            <CardTitle className="text-foreground">
+                                Easy Table Booking
+                            </CardTitle>
                             <CardDescription className="text-center text-muted-foreground">
                                 Reserve your favorite table with just a few
                                 clicks. View real-time availability and make
@@ -71,7 +73,10 @@ const LandingPage = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button variant="outline" className="w-full cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="w-full cursor-pointer"
+                            >
                                 Get Started
                             </Button>
                         </CardContent>
@@ -83,14 +88,19 @@ const LandingPage = () => {
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />
-                            <CardTitle className="text-foreground">Convenient Menu Ordering</CardTitle>
+                            <CardTitle className="text-foreground">
+                                Convenient Menu Ordering
+                            </CardTitle>
                             <CardDescription className="text-center text-muted-foreground">
                                 Browse menus, customize orders, and place
                                 seamless takeout from your favorite restaurants.
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button variant="outline" className="w-full cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="w-full cursor-pointer"
+                            >
                                 Get Started
                             </Button>
                         </CardContent>
@@ -102,7 +112,9 @@ const LandingPage = () => {
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />
-                            <CardTitle className="text-foreground">Secure Payments</CardTitle>
+                            <CardTitle className="text-foreground">
+                                Secure Payments
+                            </CardTitle>
                             <CardDescription className="text-center text-muted-foreground">
                                 Experience hassle-free, secure transactions with
                                 multiple payment options and advanced
@@ -110,7 +122,10 @@ const LandingPage = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button variant="outline" className="w-full cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="w-full cursor-pointer"
+                            >
                                 Get Started
                             </Button>
                         </CardContent>
@@ -123,7 +138,9 @@ const LandingPage = () => {
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />
-                            <CardTitle className="text-foreground">Dynamic Menu Management</CardTitle>
+                            <CardTitle className="text-foreground">
+                                Dynamic Menu Management
+                            </CardTitle>
                             <CardDescription className="text-center text-muted-foreground">
                                 Easily update menus, add specials, manage
                                 pricing, and showcase your culinary offerings in
@@ -131,7 +148,10 @@ const LandingPage = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button variant="outline" className="w-full cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="w-full cursor-pointer"
+                            >
                                 Get Started
                             </Button>
                         </CardContent>
@@ -143,14 +163,19 @@ const LandingPage = () => {
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />
-                            <CardTitle className="text-foreground">Inventory Tracking</CardTitle>
+                            <CardTitle className="text-foreground">
+                                Inventory Tracking
+                            </CardTitle>
                             <CardDescription className="text-center text-muted-foreground">
                                 Monitor stock levels, track ingredient usage,
                                 and receive automated restocking alerts.
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button variant="outline" className="w-full cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="w-full cursor-pointer"
+                            >
                                 Get Started
                             </Button>
                         </CardContent>
@@ -162,7 +187,9 @@ const LandingPage = () => {
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />
-                            <CardTitle className="text-foreground">Staff Scheduling</CardTitle>
+                            <CardTitle className="text-foreground">
+                                Staff Scheduling
+                            </CardTitle>
                             <CardDescription className="text-center text-muted-foreground">
                                 Simplify workforce management with intuitive
                                 scheduling, shift tracking, and performance
@@ -170,7 +197,10 @@ const LandingPage = () => {
                             </CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button variant="outline" className="w-full cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="w-full cursor-pointer"
+                            >
                                 Get Started
                             </Button>
                         </CardContent>
