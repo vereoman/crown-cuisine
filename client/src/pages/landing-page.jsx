@@ -39,7 +39,7 @@ const LandingPage = () => {
                         <Button
                             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 flex items-center cursor-pointer"
                             variant="default"
-                            onClick={() => navigate("/auth/signup")}
+                            onClick={() => navigate("/auth")}
                         >
                             Get Started
                         </Button>
