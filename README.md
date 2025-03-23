@@ -1,6 +1,6 @@
 <div align="center">
     <br>
-    <img src="./crown-cuisine.png" alt="Crown Cuisine Logo" width="120" />
+    <img src="./client/public/crown-cuisine.png" alt="Crown Cuisine Logo" width="120" />
     <br>
 </div>
 
