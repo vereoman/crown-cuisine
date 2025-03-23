@@ -3,52 +3,65 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { MapPin, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const RestaurantCard = ({ restaurant, onSelect }) => {
-  return (
-    <Card
-      className="overflow-hidden transition-all duration-300 hover:shadow-lg"
-      onClick={() => onSelect(restaurant.id)}
-    >
-      <div className="h-48 w-full relative">
-        <img
-          src={restaurant.image}
-          alt={restaurant.name}
-          className="absolute inset-0 w-full h-48 object-cover"
-          loading="lazy"
-        />
-        <div className="absolute top-2 right-2">
-          <div className="flex items-center bg-black/70 text-white px-2 py-1 rounded text-sm font-medium backdrop-blur-sm">
-            ★ {restaurant.rating}
-          </div>
-        </div>
-      </div>
-      <CardContent className="pt-4 pb-2">
-        <div className="flex items-center mb-1">
-          <h2 className="text-xl font-semibold line-clamp-1 mr-2">
-            {restaurant.name}
-          </h2>
-          <Badge variant="secondary" className="font-medium">
-            {restaurant.cuisine}
-          </Badge>
-        </div>
-        <p className="text-muted-foreground text-sm line-clamp-2">
-          {restaurant.address}
-        </p>
-      </CardContent>
-      <CardFooter className="bg-muted/20 px-6 py-3 mt-auto">
-        <Button
-          className="w-full cursor-pointer font-medium transition-all duration-300 hover:bg-primary/90"
-          onClick={(e) => {
-            e.stopPropagation();
-            navigate(`/restaurant/${restaurant.id}`);
-          }}
+    const navigate = useNavigate();
+
+    return (
+        <Card
+            className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col"
+            onClick={() => onSelect(restaurant.id)}
         >
-          Select Restaurant
-        </Button>
-      </CardFooter>
-    </Card>
-  );
+            {/* Image Section - No top padding */}
+            <div className="relative w-full aspect-video overflow-hidden">
+                <img
+                    src={restaurant.image}
+                    alt={restaurant.name}
+                    className="w-full h-full object-cover transition-transform"
+                    loading="lazy"
+                />
+
+                {/* Rating Badge */}
+                <div className="absolute top-3 right-3">
+                    <div className="flex items-center gap-1 bg-black/75 text-white px-2.5 py-1.5 rounded-full text-sm font-medium backdrop-blur-sm">
+                        <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+                        <span>{restaurant.rating}</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Content Section */}
+            <CardContent className="pt-4 pb-2 flex-grow">
+                <Badge variant="secondary" className="mb-2 font-medium">
+                    {restaurant.cuisine}
+                </Badge>
+
+                <h2 className="text-xl font-semibold line-clamp-1 mb-2">
+                    {restaurant.name}
+                </h2>
+
+                <div className="flex items-center text-muted-foreground text-sm">
+                    <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
+                    <p className="line-clamp-2">{restaurant.address}</p>
+                </div>
+            </CardContent>
+
+            {/* Footer Section */}
+            <CardFooter className="pt-2 pb-4">
+                <Button
+                    className="w-full font-medium transition-all duration-300 cursor-pointer"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/restaurant/${restaurant.id}`);
+                    }}
+                >
+                    Select Restaurant
+                </Button>
+            </CardFooter>
+        </Card>
+    );
 };
 
 export default RestaurantCard;

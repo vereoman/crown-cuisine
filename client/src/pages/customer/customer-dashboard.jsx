@@ -11,7 +11,7 @@ const restaurants = [
         id: 1,
         name: "The Rustic Table",
         address: "123 Main St, Anytown, USA",
-        image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         rating: 4.5,
         cuisine: "American",
     },
@@ -19,7 +19,7 @@ const restaurants = [
         id: 2,
         name: "Sakura Sushi",
         address: "456 Oak Ave, Somewhere, USA",
-        image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1628294895933-4360614f39dd?q=80&w=1664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         rating: 4.7,
         cuisine: "Japanese",
     },
@@ -27,33 +27,9 @@ const restaurants = [
         id: 3,
         name: "Pasta Paradise",
         address: "789 Elm Blvd, Nowhere, USA",
-        image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        image: "https://images.unsplash.com/photo-1651978595428-b79169f223a5?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         rating: 4.2,
         cuisine: "Italian",
-    },
-    {
-        id: 4,
-        name: "Spice Garden",
-        address: "101 Pine St, Elsewhere, USA",
-        image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        rating: 4.6,
-        cuisine: "Indian",
-    },
-    {
-        id: 5,
-        name: "Taco Fiesta",
-        address: "202 Cedar Rd, Anywhere, USA",
-        image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        rating: 4.3,
-        cuisine: "Mexican",
-    },
-    {
-        id: 6,
-        name: "Le Petit Bistro",
-        address: "303 Maple Dr, Someplace, USA",
-        image: "https://images.unsplash.com/photo-1512132411229-c30391241dd8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        rating: 4.8,
-        cuisine: "French",
     },
 ];
 
@@ -92,7 +68,7 @@ const CustomerDashboard = () => {
                 />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filteredRestaurants.map((restaurant) => (
                     <RestaurantCard
                         key={restaurant.id}

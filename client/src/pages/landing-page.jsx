@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
     Card,
@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import {
     CalendarCheck,
-    Utensils,
+    UtensilsCrossed,
     CreditCard,
     MenuSquare,
     Warehouse,
@@ -23,19 +23,19 @@ const LandingPage = () => {
     return (
         <div className="min-h-screen bg-background flex flex-col">
             {/* Hero Section */}
-            <section className="flex items-center justify-center text-center px-6 py-16">
+            <section className="flex items-center justify-center text-center px-6 pt-24 pb-12">
                 <div>
                     <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
                         Streamline Your Restaurant
                         <br />
                         Management Experience
                     </h1>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
                         A comprehensive platform designed to empower restaurant
                         owners and delight customers with seamless, innovative
                         solutions.
                     </p>
-                    <div className="flex justify-center gap-4 mb-16">
+                    <div className="flex justify-center gap-4 mb-8">
                         <Button
                             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 flex items-center cursor-pointer"
                             variant="default"
@@ -43,19 +43,13 @@ const LandingPage = () => {
                         >
                             Get Started
                         </Button>
-                        <Button
-                            className="bg-secondary hover:bg-secondary/80 text-secondary-foreground px-8 py-6 cursor-pointer"
-                            variant="secondary"
-                        >
-                            Learn More
-                        </Button>
                     </div>
                 </div>
             </section>
 
             {/* Features Section */}
-            <section className="w-full max-w-7xl mx-auto px-6 py-16">
-                <div className="grid md:grid-cols-3 gap-8">
+            <section className="w-full max-w-7xl mx-auto px-6 pt-0 pb-16">
+                <div className="grid md:grid-cols-3 gap-6">
                     {/* Customer Features */}
                     <Card className="flex flex-col items-center bg-card">
                         <CardHeader className="flex flex-col items-center">
@@ -84,7 +78,7 @@ const LandingPage = () => {
 
                     <Card className="flex flex-col items-center bg-card">
                         <CardHeader className="flex flex-col items-center">
-                            <Utensils
+                            <UtensilsCrossed
                                 className="w-8 h-8 text-primary mb-4"
                                 style={{ strokeWidth: 1.5 }}
                             />

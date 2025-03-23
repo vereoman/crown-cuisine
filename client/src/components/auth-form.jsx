@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export default function AuthForms() {
+const authForm = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -28,14 +28,14 @@ export default function AuthForms() {
 
     const defaultTab = location.pathname.includes("signup")
         ? "signup"
-        : "login";
+        : "signin";
 
-    const onLoginSubmit = (e) => {
+    const onSigninSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
 
         try {
-            console.log("Login attempt:", {
+            console.log("Sign in attempt:", {
                 email,
                 password,
                 userType,
@@ -46,7 +46,7 @@ export default function AuthForms() {
                 setIsLoading(false);
             }, 1000);
         } catch (error) {
-            console.error("Login failed:", error);
+            console.error("Sign in failed:", error);
             setIsLoading(false);
         }
     };
@@ -76,22 +76,35 @@ export default function AuthForms() {
 
     return (
         <div className="w-full max-w-md mx-auto mt-20">
+            <div className="mb-6">
+                <Button
+                    variant="outline"
+                    className="mb-4 cursor-pointer"
+                    onClick={() => navigate("/")}
+                >
+                    ← Back to Dashboard
+                </Button>
+            </div>
             <Tabs defaultValue={defaultTab} className="w-full">
                 <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="login">Log in</TabsTrigger>
-                    <TabsTrigger value="signup">Sign up</TabsTrigger>
+                    <TabsTrigger value="signin" className="cursor-pointer">
+                        Sign in
+                    </TabsTrigger>
+                    <TabsTrigger value="signup" className="cursor-pointer">
+                        Sign up
+                    </TabsTrigger>
                 </TabsList>
 
-                <TabsContent value="login">
+                <TabsContent value="signin">
                     <Card>
                         <CardHeader>
-                            <CardTitle>Log in to your account</CardTitle>
+                            <CardTitle>Sign in to your account</CardTitle>
                             <CardDescription>
                                 Enter your credentials to access your account
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
-                            <form onSubmit={onLoginSubmit}>
+                            <form onSubmit={onSigninSubmit}>
                                 <div className="space-y-4">
                                     <div className="space-y-2">
                                         <Label htmlFor="email">Email</Label>
@@ -122,10 +135,12 @@ export default function AuthForms() {
 
                                     <Button
                                         type="submit"
-                                        className="w-full"
+                                        className="w-full cursor-pointer"
                                         disabled={isLoading}
                                     >
-                                        {isLoading ? "Logging in..." : "Login"}
+                                        {isLoading
+                                            ? "Signing in..."
+                                            : "Sign in"}
                                     </Button>
                                 </div>
                             </form>
@@ -212,6 +227,7 @@ export default function AuthForms() {
                                         <TabsList className="grid w-full grid-cols-2">
                                             <TabsTrigger
                                                 value="customer"
+                                                className="cursor-pointer"
                                                 onClick={() =>
                                                     setUserType("customer")
                                                 }
@@ -220,6 +236,7 @@ export default function AuthForms() {
                                             </TabsTrigger>
                                             <TabsTrigger
                                                 value="owner"
+                                                className="cursor-pointer"
                                                 onClick={() =>
                                                     setUserType("owner")
                                                 }
@@ -231,7 +248,7 @@ export default function AuthForms() {
 
                                     <Button
                                         type="submit"
-                                        className="w-full"
+                                        className="w-full cursor-pointer"
                                         disabled={isLoading}
                                     >
                                         {isLoading
@@ -243,7 +260,7 @@ export default function AuthForms() {
                         </CardContent>
                         <CardFooter className="flex justify-center">
                             <p className="text-sm text-muted-foreground">
-                                Already have an account? Log in
+                                Already have an account? Sign in
                             </p>
                         </CardFooter>
                     </Card>
@@ -251,4 +268,6 @@ export default function AuthForms() {
             </Tabs>
         </div>
     );
-}
+};
+
+export default authForm;
