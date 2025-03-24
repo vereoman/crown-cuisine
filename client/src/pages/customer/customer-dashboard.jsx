@@ -1,11 +1,8 @@
-"use client";
-
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import RestaurantCard from "../../components/restaurant-card";
 
-// Sample restaurant data
 const restaurants = [
     {
         id: 1,

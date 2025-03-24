@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import {
     Card,
@@ -46,7 +44,6 @@ import {
 } from "lucide-react";
 
 const OwnerDashboard = () => {
-    // Table Management State
     const [tables, setTables] = useState([
         { id: 1, number: 1, capacity: 4, status: "available" },
         { id: 2, number: 2, capacity: 2, status: "occupied" },
@@ -56,7 +53,6 @@ const OwnerDashboard = () => {
     const [newTable, setNewTable] = useState({ number: "", capacity: "" });
     const [tableDialogOpen, setTableDialogOpen] = useState(false);
 
-    // Menu Management State
     const [menuItems, setMenuItems] = useState([
         {
             id: 1,
@@ -89,7 +85,6 @@ const OwnerDashboard = () => {
     });
     const [menuDialogOpen, setMenuDialogOpen] = useState(false);
 
-    // Handle adding a new table
     const handleAddTable = () => {
         if (newTable.number && newTable.capacity) {
             setTables([
@@ -106,7 +101,6 @@ const OwnerDashboard = () => {
         }
     };
 
-    // Handle adding a new menu item
     const handleAddMenuItem = () => {
         if (newMenuItem.name && newMenuItem.category && newMenuItem.price) {
             setMenuItems([
@@ -129,7 +123,6 @@ const OwnerDashboard = () => {
         }
     };
 
-    // Handle changing table status
     const handleChangeTableStatus = (tableId, newStatus) => {
         setTables(
             tables.map((table) =>

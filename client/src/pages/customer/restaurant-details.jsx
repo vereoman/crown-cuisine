@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import {
     Card,
     CardContent,
@@ -35,9 +35,8 @@ import { Separator } from "@/components/ui/separator";
 import MenuCard from "../../components/menu-card";
 
 const RestaurantDetails = ({ restaurant }) => {
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
-    // This would come from props in a real application
     const restaurantData = restaurant || {
         id: 1,
         name: "Sakura Sushi",
@@ -96,14 +95,12 @@ const RestaurantDetails = ({ restaurant }) => {
     const [date, setDate] = useState(new Date());
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-    // Handle next image
     const nextImage = () => {
         setCurrentImageIndex((prevIndex) =>
             prevIndex === restaurantData.images.length - 1 ? 0 : prevIndex + 1
         );
     };
 
-    // Handle previous image
     const prevImage = () => {
         setCurrentImageIndex((prevIndex) =>
             prevIndex === 0 ? restaurantData.images.length - 1 : prevIndex - 1
@@ -122,44 +119,41 @@ const RestaurantDetails = ({ restaurant }) => {
                 </Button>
                 <div className="flex flex-col md:flex-row gap-6">
                     {/* Restaurant Images */}
-                    <Card className="w-full md:w-2/3">
-                        <CardContent className="p-0 relative">
-                            <div className="relative h-96 w-full overflow-hidden">
-                                <img
-                                    src={
-                                        restaurantData.images[currentImageIndex]
-                                    }
-                                    alt={`${restaurantData.name} interior`}
-                                    className="w-full h-full object-cover object-center scale-110" // Added scale-110 to zoom the image
-                                />
-                                <div className="absolute inset-0 flex items-center justify-between p-4">
-                                    <Button
-                                        variant="secondary"
-                                        size="icon"
-                                        onClick={prevImage}
-                                        className="rounded-full bg-white/80 hover:bg-white/90 cursor-pointer"
-                                    >
-                                        ←
-                                    </Button>
-                                    <Button
-                                        variant="secondary"
-                                        size="icon"
-                                        onClick={nextImage}
-                                        className="rounded-full bg-white/80 hover:bg-white/90 cursor-pointer"
-                                    >
-                                        →
-                                    </Button>
-                                </div>
-                                <div className="absolute bottom-4 right-4 bg-white/80 px-2 py-1 rounded-md">
-                                    {currentImageIndex + 1} /{" "}
-                                    {restaurantData.images.length}
-                                </div>
+                    <Card className="w-full md:w-2/3 overflow-hidden p-0 flex flex-col">
+                        <div className="relative w-full h-[500px]">
+                            <img
+                                src={restaurantData.images[currentImageIndex]}
+                                alt={`${restaurantData.name} interior`}
+                                className="w-full h-full object-cover object-center"
+                                style={{ display: "block" }}
+                            />
+                            <div className="absolute inset-0 flex items-center justify-between p-4">
+                                <Button
+                                    variant="secondary"
+                                    size="icon"
+                                    onClick={prevImage}
+                                    className="rounded-full bg-white/80 hover:bg-white/90 cursor-pointer"
+                                >
+                                    ←
+                                </Button>
+                                <Button
+                                    variant="secondary"
+                                    size="icon"
+                                    onClick={nextImage}
+                                    className="rounded-full bg-white/80 hover:bg-white/90 cursor-pointer"
+                                >
+                                    →
+                                </Button>
                             </div>
-                        </CardContent>
+                            <div className="absolute bottom-4 right-4 bg-white/80 px-2 py-1 rounded-md">
+                                {currentImageIndex + 1} /{" "}
+                                {restaurantData.images.length}
+                            </div>
+                        </div>
                     </Card>
 
-                    {/* Restaurant Info */}
-                    <Card className="w-full md:w-1/3">
+                    {/* Restaurant Info - Modified for height matching */}
+                    <Card className="w-full md:w-1/3 h-[500px] flex flex-col">
                         <CardHeader>
                             <div className="flex justify-between items-start">
                                 <div>
@@ -177,7 +171,7 @@ const RestaurantDetails = ({ restaurant }) => {
                                 </div>
                             </div>
                         </CardHeader>
-                        <CardContent>
+                        <CardContent className="flex-grow">
                             <div className="space-y-4">
                                 <div>
                                     <h3 className="font-semibold">Address</h3>
@@ -197,7 +191,7 @@ const RestaurantDetails = ({ restaurant }) => {
                                 </div>
                             </div>
                         </CardContent>
-                        <CardFooter className="flex gap-2">
+                        <CardFooter className="flex gap-2 mt-auto">
                             <Dialog onOpenChange={setIsDialogOpen}>
                                 <DialogTrigger asChild>
                                     <Button className="flex-1 cursor-pointer">

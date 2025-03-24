@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -48,16 +47,17 @@ const MenuCard = ({ item }) => {
 
     return (
         <Card
-            className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col"
+            className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col p-0 rounded-lg"
             onClick={() => console.log(`Selected ${item.name}`)}
         >
             {/* Image Section */}
-            <div className="relative w-full aspect-video overflow-hidden">
+            <div className="relative w-full overflow-hidden rounded-t-lg">
                 {item.image && (
                     <img
                         src={item.image}
                         alt={item.name}
-                        className="w-full h-full object-cover transition-transform"
+                        className="w-full h-56 object-cover object-center transition-transform"
+                        style={{ display: "block", margin: 0 }}
                         loading="lazy"
                     />
                 )}
@@ -71,7 +71,7 @@ const MenuCard = ({ item }) => {
             </div>
 
             {/* Content Section */}
-            <CardContent className="pt-4 pb-2 flex-grow">
+            <CardContent className="pt-4 px-4 pb-2 flex-grow">
                 {item.dietary && item.dietary.length > 0 && (
                     <Badge variant="secondary" className="mb-2 font-medium">
                         {item.dietary[0]}
@@ -100,7 +100,7 @@ const MenuCard = ({ item }) => {
             </CardContent>
 
             {/* Footer Section */}
-            <CardFooter className="pt-2 pb-4">
+            <CardFooter className="pt-2 pb-4 px-4">
                 <div className="flex items-center justify-between w-full">
                     <div className="flex items-center border rounded-md">
                         <Button

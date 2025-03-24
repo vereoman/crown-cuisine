@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,15 +9,15 @@ const RestaurantCard = ({ restaurant, onSelect }) => {
 
     return (
         <Card
-            className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col"
+            className="overflow-hidden transition-all duration-300 hover:shadow-lg group h-full flex flex-col p-0"
             onClick={() => onSelect(restaurant.id)}
         >
-            {/* Image Section - No top padding */}
-            <div className="relative w-full aspect-video overflow-hidden">
+            {/* Image Section - No padding */}
+            <div className="relative w-full h-56 overflow-hidden">
                 <img
                     src={restaurant.image}
                     alt={restaurant.name}
-                    className="w-full h-full object-cover transition-transform"
+                    className="w-full h-full object-cover object-center transition-transform"
                     loading="lazy"
                 />
 
@@ -32,8 +30,8 @@ const RestaurantCard = ({ restaurant, onSelect }) => {
                 </div>
             </div>
 
-            {/* Content Section */}
-            <CardContent className="pt-4 pb-2 flex-grow">
+            {/* Content Section - Add explicit padding here */}
+            <CardContent className="pt-4 px-4 pb-2 flex-grow">
                 <Badge variant="secondary" className="mb-2 font-medium">
                     {restaurant.cuisine}
                 </Badge>
@@ -48,8 +46,8 @@ const RestaurantCard = ({ restaurant, onSelect }) => {
                 </div>
             </CardContent>
 
-            {/* Footer Section */}
-            <CardFooter className="pt-2 pb-4">
+            {/* Footer Section - Add explicit padding */}
+            <CardFooter className="pt-2 pb-4 px-4">
                 <Button
                     className="w-full font-medium transition-all duration-300 cursor-pointer"
                     onClick={(e) => {
